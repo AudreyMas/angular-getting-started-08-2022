@@ -9,6 +9,7 @@ import { FormBuilder } from '@angular/forms';
 })
 export class CartComponent implements OnInit {
   items = this.cartService.getItems();
+
   checkoutForm = this.formBuilder.group({
     name: '',
     address: '',
@@ -21,9 +22,22 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {}
 
+  // clearCart(i: any) {
+  //   this.items.splice(i,1);
+  //   window.alert('Your product has been deleted to the cart!');
+  // }
+
+  // clearCart(i: any)
+  // {
+  //   if (this.items.find(x => x == i)) {
+  //     this.items.splice(this.items.findIndex(x => x == i), 1);
+  //  }
+  //   this.items.splice(i,1);
+  // }
   clearCart(i: any) {
-    this.items.splice(i,1);
+    this.items.splice(this.items.indexOf(i), 1);
     window.alert('Your product has been deleted to the cart!');
+    console.log('DATA:' + i);
   }
 
   onSubmit(): void {
