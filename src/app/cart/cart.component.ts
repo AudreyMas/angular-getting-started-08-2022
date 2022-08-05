@@ -22,19 +22,12 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {}
 
-  // clearCart(i: any) {
-  //   this.items.splice(i,1);
-  //   window.alert('Your product has been deleted to the cart!');
-  // }
+  clearAllCart(i: any) {
+    this.items.splice(i);
+    window.alert('Your cart is empty now!');
+  }
 
-  // clearCart(i: any)
-  // {
-  //   if (this.items.find(x => x == i)) {
-  //     this.items.splice(this.items.findIndex(x => x == i), 1);
-  //  }
-  //   this.items.splice(i,1);
-  // }
-  clearCart(i: any) {
+  clearItem(i: any) {
     this.items.splice(this.items.indexOf(i), 1);
     window.alert('Your product has been deleted to the cart!');
     console.log('DATA:' + i);
